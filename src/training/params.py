@@ -53,6 +53,12 @@ class TrainingArguments(TrainingArguments):
     merger_lr: Optional[float] = None
     lora_namespan_exclude: str = field(default=None, metadata={"help": "List of namespan to exclude for LoRA"})
     num_lora_modules: int = -1
+    save_total_limit: Optional[int] = field(
+        default=3,
+        metadata={
+            "help": "Limit the total amount of checkpoints. Deletes the older checkpoints."
+        }
+    )
 
 
 @dataclass
